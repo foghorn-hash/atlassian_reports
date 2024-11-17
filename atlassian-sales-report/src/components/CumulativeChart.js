@@ -9,6 +9,7 @@ import {
   Tooltip,
   ResponsiveContainer,
 } from "recharts";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const CumulativeChart = () => {
   const [chartData, setChartData] = useState([]);
@@ -21,7 +22,7 @@ const CumulativeChart = () => {
 
   const fetchCumulativeData = async () => {
     try {
-      const response = await axios.get("http://localhost/atlassian_reports/reports/public/api/cumulative-sales"); // Update to your API URL
+      const response = await axios.get(apiUrl + "/cumulative-sales"); // Update to your API URL
       setChartData(response.data.root);
     } catch (err) {
       setError("Failed to fetch cumulative data. Please try again.");

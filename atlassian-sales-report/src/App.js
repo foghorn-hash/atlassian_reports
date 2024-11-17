@@ -2,6 +2,7 @@ import React from "react";
 import TransactionsTable from "./components/TransactionsTable";
 import TransactionsTableAll from "./components/TransactionsTableAll";
 import CumulativeChart from "./components/CumulativeChart";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (

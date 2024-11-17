@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const TransactionsTable = () => {
   const [transactions, setTransactions] = useState([]);
@@ -14,7 +15,7 @@ const TransactionsTable = () => {
 
   const fetchTransactions = async () => {
     try {
-      const response = await axios.get("http://localhost/atlassian_reports/reports/public/api/sales-report"); // Replace with your Laravel API URL
+      const response = await axios.get(apiUrl + "/sales-report"); // Replace with your Laravel API URL
       const data = response.data.root;
 
       // Prepare chart data

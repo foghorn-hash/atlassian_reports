@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   ResponsiveContainer,
 } from "recharts";
+const apiUrl = process.env.REACT_APP_API_URL;
 
 const TransactionsTableAll = () => {
   const [transactions, setTransactions] = useState([]);
@@ -23,7 +24,7 @@ const TransactionsTableAll = () => {
   const fetchTransactions = async () => {
     try {
       const response = await axios.get(
-        "http://localhost/atlassian_reports/reports/public/api/transactions"
+        apiUrl + "/transactions"
       ); // Replace with your Laravel API URL
       const data = response.data.root;
 
