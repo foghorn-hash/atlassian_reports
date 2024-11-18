@@ -3,6 +3,7 @@ import TransactionsTable from "./components/TransactionsTable";
 import TransactionsTableAll from "./components/TransactionsTableAll";
 import CumulativeChart from "./components/CumulativeChart";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
 
 function App() {
   return (
