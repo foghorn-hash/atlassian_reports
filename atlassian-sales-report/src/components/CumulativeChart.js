@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
+import TransactionsTableCumulative from "./TransactionsTableCumulative";
 import {
   BarChart,
   Bar,
@@ -46,6 +48,7 @@ const CumulativeChart = () => {
           <Bar dataKey="cumulativeVendorBalance" fill="#007bff" name="Cumulative Vendor Balance" />
         </BarChart>
       </ResponsiveContainer>
+      <TransactionsTableCumulative chartData={chartData} />
     </div>
   );
 };

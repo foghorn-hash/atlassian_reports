@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
 import {
   BarChart,
   Bar,
@@ -64,7 +65,7 @@ const TransactionsTableAll = () => {
 
       {/* Table */}
       <h3>Transaction Table</h3>
-      <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Sale Date</th>
@@ -79,7 +80,7 @@ const TransactionsTableAll = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };

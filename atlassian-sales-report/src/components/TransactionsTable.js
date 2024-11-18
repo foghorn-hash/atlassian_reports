@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Table from 'react-bootstrap/Table';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
 const apiUrl = process.env.REACT_APP_API_URL;
 
@@ -52,7 +53,7 @@ const TransactionsTable = () => {
 
       {/* Table */}
       <h3>Transaction Table</h3>
-      <table border="1" style={{ width: "100%", borderCollapse: "collapse" }}>
+      <Table striped bordered hover>
         <thead>
           <tr>
             <th>Year</th>
@@ -67,7 +68,7 @@ const TransactionsTable = () => {
             </tr>
           ))}
         </tbody>
-      </table>
+      </Table>
     </div>
   );
 };
