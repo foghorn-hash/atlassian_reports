@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer } from "recharts";
+import LOADING from '../tube-spinner.svg';
 const apiUrl = process.env.REACT_APP_API_URL;
 
 const TransactionsTable = () => {
@@ -34,7 +35,7 @@ const TransactionsTable = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className="loading-screen"><img src={LOADING} alt="Loading..." /></div>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+import LOADING from '../tube-spinner.svg';
 import {
   BarChart,
   Bar,
@@ -45,12 +46,12 @@ const TransactionsTableAll = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className="loading-screen"><img src={LOADING} alt="Loading..." /></div>;
   if (error) return <p style={{ color: "red" }}>{error}</p>;
 
   return (
     <div>
-      <h2>Cumulative Transactions with Bar Chart</h2>
+      <h2>Transactions with Bar Chart</h2>
 
       {/* Bar Chart */}
       <ResponsiveContainer width="100%" height={400}>
